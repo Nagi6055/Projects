@@ -1,6 +1,7 @@
 📁 Projects Repository
 
 This repository serves as a collection of various personal, academic, and experimental projects. It includes a range of code samples, prototypes, and full-scale applications developed using different languages, frameworks, and technologies.
+
 🔍 What's Inside
 
     💻 Web development projects (HTML, CSS, JavaScript, React, etc.)
